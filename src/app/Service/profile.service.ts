@@ -8,26 +8,17 @@ import { Observable } from 'rxjs';
 export class ProfileService {
   constructor(private http: HttpClient) {}
 
-  // profile = [
-  //   {
-  //     name: 'Goku',
-  //     image:
-  //       'https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg',
-  //     anime: 'Dragon Ball',
-  //   },
-  // ];
-
-  url = 'http://localhost:3000/animeProfile';
+  url = 'http://localhost:3000/animeProfile/';
 
   getProfiles(): Observable<any> {
     return this.http.get(this.url);
   }
 
-  addProfile(profile: any, index: Number): Observable<any> {
+  addProfile(profile: any, index: number): Observable<any> {
     return this.http.post(this.url, profile);
   }
 
-  removeProfile(profile: any, index: Number) {
-    return this.http.delete(this.url + '/' + profile.id);
+  removeProfile(profile: any) {
+    return this.http.delete(this.url + profile);
   }
 }
