@@ -1,0 +1,40 @@
+{
+  "animeProfile": [
+    {
+      "id": "1",
+      "charName": "Goku",
+      "animeName": "Dragon Ball",
+      "imgUrl": "https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg"
+    },
+    {
+      "id": "2",
+      "charName": "Luffy",
+      "animeName": "One Piece",
+      "imgUrl": "https://i.pinimg.com/originals/50/08/ef/5008efb9df96969624d2674645027a3a.png"
+    },
+    {
+      "id": "5f4a",
+      "charName": "Ichigo",
+      "animeName": "BLeach",
+      "imgUrl": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/04/Ichigo.jpg"
+    },
+    {
+      "id": "9fcb",
+      "charName": "Asta",
+      "animeName": "Black Clover",
+      "imgUrl": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/04/asta-devil-feature.jpg"
+    },
+    {
+      "id": "2601",
+      "charName": "Eren Yeager",
+      "animeName": "Attack On Titan",
+      "imgUrl": "https://sm.ign.com/ign_in/screenshot/default/attack-on-titan-eren_duqn.jpg"
+    },
+    {
+      "id": "ba33",
+      "charName": "Sung Jin-woo",
+      "animeName": "Solo Leveling",
+      "imgUrl": "https://a.storyblok.com/f/178900/1504x846/e446fc89a9/solo-leveling-trailer.jpg"
+    }
+  ]
+}

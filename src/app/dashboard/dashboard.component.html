@@ -1,0 +1,70 @@
+<!-- Button trigger modal -->
+<button mat-raised-button color="warn" class="m-4 float-right" data-bs-toggle="modal"
+    data-bs-target="#addModalCenter">Add Character</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addModalCenter" tabindex="-1" role="dialog" aria-labelledby="addModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLongTitle">Modal title</h2>
+                <button type="button" class="close" data-bs-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="addForm">
+                    <label>Character Name</label>
+                    <input type="text" class="form-control mb-2" formControlName="charName">
+                    <label>Anime Name</label>
+                    <input type="text" class="form-control mb-2" formControlName="animeName">
+                    <label>Image URL</label>
+                    <input type="file" #fileInput class="form-control mb-2" formControlName="imgUrl"
+                        (change)="onFileSelected($event)">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="addCharacter()">{{
+                    isSwitchModel ? 'Edit' : 'Add' }}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contain">
+    <div class="card" *ngFor="let item of profileData">
+        <img class="profileImage" src="{{item.imgUrl}}" alt="Character Profile">
+        <div class="textContainer">
+            <p class="name">{{item.charName}}</p>
+            <p class="profile">{{item.animeName}}</p>
+            <div class="d-flex justify-content-around">
+                <button class="btn btn-warning col-4" data-bs-toggle="modal" data-bs-target="#addModalCenter"
+                    (click)="editProfile(item.charName, item.animeName, item.imgUrl, item.id)">Edit</button>
+                <button class="btn btn-danger col-4" data-bs-toggle="modal" data-bs-target="#removeModalCenter"
+                    (click)="confirmDelete(item.id, item.charName)">Delete</button>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<div class="modal-fade" id="removeModalCenter" tabindex="-1" aria-labelledby="removeModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLongTitle">Are you sure, you want to delete
+                    {{charNameToDelete}}</h2>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body d-flex justify-content-around">
+                <button type="button" class="btn btn-secondary modalButton" data-bs-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-primary modalButton" data-bs-dismiss="modal"
+                    (click)="removeCharacter()">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
