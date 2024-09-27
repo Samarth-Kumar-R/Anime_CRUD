@@ -28,6 +28,7 @@
   border-radius: 50%;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.329);
   transform: scale(2) ease-in;
+  object-fit: cover;
 }
 
 /* .profileImage:hover {
@@ -53,7 +54,8 @@
 }
 
 .profile {
-  font-size: 0.84em;
+  font-size: large;
+  font-weight: 500;
   color: rgb(194, 194, 194);
   letter-spacing: 0.2px;
 }
@@ -61,4 +63,9 @@
 .card:hover {
   background-color: rgb(43, 43, 43);
   transition-duration: .5s;
+}
+
+.modalButton {
+  width: 8rem;
+  height: 3rem;
 }
